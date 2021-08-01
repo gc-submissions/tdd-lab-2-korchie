@@ -25,11 +25,14 @@ class Cart {
 
     getTotalBeforeTax(){
         // This has no parameters and returns the sum of the price of all Products in the items array.
-        let sum = 0;
+        // variabke to hold the total
+        let total = 0;
+        // loop
         this.items.forEach(function(item){
-            sum += item.price;
+            total += item.price;
         })
-        return sum;
+        // return the total
+        return total;
 
         // for (let i = 0; i < Cart.length; i++){
         //     console.log(items.price);
@@ -38,11 +41,13 @@ class Cart {
 
     getTotalWithTax() {
         // This has no parameters and returns the sum of the getPriceWithTax() method of all Products in the items array.
+        // variable to hold the total
         let total = 0;
         this.items.forEach((item) => {
-            total += item.getTotalWithTax();
-        })
-        return total;    
+            total += item.getPriceWithTax();
+        });
+        // return the total
+        return total;     
     }
 
     getTax() {
@@ -54,6 +59,6 @@ class Cart {
     
     
     
-}
+} 
 
 module.exports = Cart;
